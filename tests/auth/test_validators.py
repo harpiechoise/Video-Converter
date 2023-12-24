@@ -16,8 +16,8 @@ def test_password_validator():
     assert login_context.excecute('jaime') == False
     assert login_context.excecute('jaime123') == False
     assert login_context.excecute('jaime123A') == False
-    assert login_context.excecute('Piamonte1212!') == False
-    assert login_context.excecute('Piamonte1212') == True
+    assert login_context.excecute('Prueba123123123!!') == False
+    assert login_context.excecute('Prueba123123123') == True
 
 def test_create_strategy():
     login_context = create_strategy('login', 'email')
