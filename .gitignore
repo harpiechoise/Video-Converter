@@ -1,0 +1,8 @@
+**/htmlcov/*
+*.env
+*.pyc
+**/__pycache__
+**/.pytest_cache
+**/.vscode
+**/.coverage
+**/*.pyc

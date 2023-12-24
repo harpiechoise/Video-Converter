@@ -1,0 +1,4 @@
+jwt
+flask
+flask
+Flask-MySQLdb
