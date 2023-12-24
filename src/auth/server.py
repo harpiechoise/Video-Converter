@@ -3,6 +3,7 @@ from flask import Flask, request
 from db import InvalidCredentialsException, DataBaseOperations
 from validators import create_strategy
 from login import JWT
+from sys import argv
 
 dotenv.load_dotenv()
 
@@ -47,4 +48,11 @@ def validate():
         return jwt.jwt_operation('decode', token=encoded_jwt)
 
 if __name__ == '__main__':
-    server.run(debug=True)
+    server_args = {
+        'host': '0.0.0.0',
+        'port': 5000
+    }
+    if argv[1] == 'dev':
+        server_args['debug'] = True
+
+    server.run(**server_args)

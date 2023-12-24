@@ -8,3 +8,5 @@
 **/*.pyc
 *configmap*
 *secret*
+*.yaml
+**/manifests/*

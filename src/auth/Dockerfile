@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the source code
 COPY . /home/app
 
-# Exposing the port
+# To run Expose the port 5000 in the container
 EXPOSE 5000
 
 # Modify the user to be non-root
