@@ -1,7 +1,7 @@
 from typing import Any
 import mysql.connector, os
 from abc import ABC, abstractmethod
-from .models import User
+from models import User
 
 class InvalidCredentialsException(Exception):
     pass

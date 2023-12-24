@@ -1,6 +1,6 @@
-import datetime, os, dotenv, mysql.connector
+import dotenv
 from flask import Flask, request
-from db import Database, InvalidCredentialsException, DataBaseOperations
+from db import InvalidCredentialsException, DataBaseOperations
 from validators import create_strategy
 from login import JWT
 
@@ -27,15 +27,15 @@ def login():
         return {'message': 'Missing credentials'}, 401
     #! Check user and password in DB
     try:
-        db.check_credentials(auth.username, auth.password)
+        user = db.check_credentials(auth.username, auth.password)
     except InvalidCredentialsException as e:
         return {'message': str(e)}, 401
 
-    if (len(res) == 0):
-        return {'message': 'Invalid credentials'}, 401
     else:
         #! Create a JWT token
-        return jwt.jwt_operation('create', username=auth.username, authz=res[0])
+        return jwt.jwt_operation('create', 
+                                 username=auth.username, 
+                                 authz=user.isAdmin)
 
 
 @server.route('/me', methods=['GET'])
