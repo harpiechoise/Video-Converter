@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: harpiechoise/authservices1:latest
+          image: harpiechoise/auth:latest
           ports:
             - containerPort: 5000
           envFrom:
