@@ -1,8 +1,10 @@
-CREATE USER IF NOT EXISTS 'auth_server'@'localhost' IDENTIFIED BY 'Piamonte1212!';
+CREATE USER IF NOT EXISTS 'auth_server'@'localhost' IDENTIFIED BY '';
 
 CREATE DATABASE IF NOT EXISTS auth;
 
-GRANT ALL PRIVILEGES ON auth.* TO 'auth_server'@'localhost';
+GRANT CREATE, ALTER, DROP 
+ON auth.* 
+TO 'auth_server'@'localhost';
 
 USE auth;
 

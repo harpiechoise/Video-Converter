@@ -52,7 +52,7 @@ if __name__ == '__main__':
         'host': '0.0.0.0',
         'port': 5000
     }
-    if argv[1] == 'dev':
+    if len(argv) > 1 and argv[1] == 'dev':
         server_args['debug'] = True
 
     server.run(**server_args)
